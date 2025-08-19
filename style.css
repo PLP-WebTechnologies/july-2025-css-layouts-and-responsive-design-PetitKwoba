@@ -1,0 +1,104 @@
+/* General Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header & Navigation (Flexbox) */
+.site-header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex; /* Flexbox for horizontal nav */
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main Layout (Grid) */
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Content + Sidebar */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Content & Cards */
+.content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex; /* Flexbox for cards */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  padding: 1rem;
+  background: #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Footer */
+.site-footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+}
+
+/* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 2fr 1fr; /* Adjust ratio */
+  }
+
+  .navbar ul {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main-layout {
+    grid-template-columns: 1fr; /* Stack content & sidebar */
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
